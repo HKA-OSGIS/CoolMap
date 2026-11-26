@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cool Map!</title>
+	<!-- Load MapLibre GL JS -->
+	<script src="https://tiles.versatiles.org/assets/lib/maplibre-gl/maplibre-gl.js"></script>
+	<link href="https://tiles.versatiles.org/assets/lib/maplibre-gl/maplibre-gl.css" rel="stylesheet" />
+	<script>
+        "use strict";
+
+        // make variable global so that it can be accessed from elsewhere
+        let my_map;
+
+        // initialize map in a function that gets called then page is loaded
+        function init_map()
+        {
+            // start the map with a standard VersaTiles style
+            my_map = new maplibregl.Map({
+                container: 'map', // id of the container to render the map in
+                style: 'https://tiles.versatiles.org/assets/styles/colorful/style.json',
+                bounds: [-4, 41, 25, 57], // [west, south, east, north] — covers Western Europe
+		    });
+        };
+	</script>
+</head>
+
+<body onLoad="init_map()">
+	<!-- Define the map container -->
+	<div id="map" style="height:100vh"></div>
+</body>
+
+</html>
