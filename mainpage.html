@@ -23,10 +23,15 @@
         };
 	</script>
 </head>
-
+	<!-- Search box for geocoding -->
+	<div style="position:absolute; top:10px; left:10px; z-index:1; background:white; padding:5px;">
+		<input type="text" id="searchbox" placeholder="Search a place"/>
+		<button id="searchbtn">Search</button>
+	</div>
 <body onLoad="init_map()">
 	<!-- Define the map container -->
 	<div id="map" style="height:100vh"></div>
+		<script src="geocoding.js"></script>
 </body>
 
 </html>
